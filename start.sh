@@ -1,7 +1,7 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/hype-rolex/music-xdl.git /music-xdl
+  git clone https://github.com/Hydra-sjz/music-xdl.git /music-xdl
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /music-xdl
