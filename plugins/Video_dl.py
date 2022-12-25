@@ -32,7 +32,7 @@ def time_to_seconds(time):
 
 
 
-@Client.on_message(filters.private & filters.command(["video", "video@Musicx_dlbot", "v"]))
+@Client.on_message(filters.group & filters.command(["video", "video@Musicx_dlbot", "v"]))
 async def vsong(client, message):
     ydl_opts = {
         "format": "best", 
