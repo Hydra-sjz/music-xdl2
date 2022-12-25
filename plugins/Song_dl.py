@@ -44,7 +44,7 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.private & filters.command("start"))
 async def start_command(_, message):
-    message.reply_text("hi\nim music download bot for my group ‼️\nyou can download songs from my group just type /s or /song then write your song name.\ne.g: `/s alone`")
+    await message.reply_text("hi\nim music download bot for my group ‼️\nyou can download songs from my group just type /s or /song then write your song name.\ne.g: `/s alone`")
 
 @Client.on_message(filters.group & filters.command(["song", "song@Musicx_dlbot", "s"]))
 def song(_, message):
