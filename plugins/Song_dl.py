@@ -42,7 +42,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-@Client.on_message(filters.private & filters.command(["song", "song@Musicx_dlbot", "s"]))
+@Client.on_message(filters.group & filters.command(["song", "song@Musicx_dlbot", "s"]))
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎")
