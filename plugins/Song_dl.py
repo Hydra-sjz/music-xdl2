@@ -69,7 +69,7 @@ def song(_, message):
             return
 
     except Exception as e:
-        m.edit(f"Nothing Found {message.from_user.first_name} :(\n\nPlease check, you using correct format or your spellings are correct and try again.")
+        m.edit(f"Nothing Found {message.from_user.first_name} :(\n\nPlease check, you using correct format or your spellings are correct and try again.\n Correct Format : /song song_name or /s song_name")
         print(str(e))
         return
     m.edit("🔽 Downloading Audio...",
