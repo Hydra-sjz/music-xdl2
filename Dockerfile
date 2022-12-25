@@ -1,12 +1,9 @@
-FROM python:3.10-slim-buster
-
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
-
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /music-xdl
-WORKDIR /music-xdl
-COPY songdl /songdl
-#CMD ["/bin/bash", "songdl"]
+FROM nikolaik/python-nodejs:python3.10-nodejs18
+RUN apt-get update -y && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
+CMD bash start
