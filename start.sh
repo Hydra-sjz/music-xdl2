@@ -6,7 +6,7 @@ else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
   git clone $UPSTREAM_REPO /music-xdl
 fi
-cd /Midukki-RoBoT
+cd /music-xdl
 pip3 install -U -r requirements.txt
 echo "Starting music-xdl-RoBot...."
 python3 -m bot.py
