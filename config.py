@@ -9,9 +9,9 @@ if os.path.exists("local.env"):
 load_dotenv()
 admins = {}
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5203326675:AAFDyhD-bYzr2vBfgydGNVJoAunbrbNcfQE")
+API_ID = int(os.environ.get("API_ID", "11984338"))
+API_HASH = os.environ.get("API_HASH", "ea4cb0f090d7366f7e4ab9dfc116acc7")
 
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "784589736").split()))
