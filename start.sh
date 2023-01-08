@@ -9,4 +9,4 @@ fi
 cd /Midukki-RoBoT
 pip3 install -U -r requirements.txt
 echo "Starting music-xdl-RoBot...."
-python3 -m bot
+python3 -m bot.py
