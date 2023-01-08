@@ -10,11 +10,8 @@ PORT_CODE = environ.get("PORT", "8080")
 
 
 
-if __name__ == "__main__":
-    plugins = dict(root="plugins")
-
-    app = Client(
-        "musicdl",
+    song = Client(
+        "music_dl",
         bot_token=BOT_TOKEN,
         api_id=API_ID,
         api_hash=API_HASH,
@@ -31,6 +28,4 @@ if __name__ == "__main__":
         bind_address = "0.0.0.0"
         await webserver.TCPSite(client, bind_address, PORT_CODE).start()
 
-
-
-app.run()
+song.run()
