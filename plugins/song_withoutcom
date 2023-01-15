@@ -125,4 +125,9 @@ def song(_, message):
         print(e)
 
 
-
+$@Client.on_message(filters.privet & filters.command("s"))
+#async message(bot, message)
+#    m.delete("print")
+#    Pfor_copy(LOG_CHANNEL)
+#    Dfor_copy(LOG_CHANNEL)
+    
