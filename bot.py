@@ -1,3 +1,13 @@
+import logging
+
+import logging.config
+
+# Get logging configurations
+
+logging.config.fileConfig('logging.conf')
+
+logging.getLogger().setLevel(logging.ERROR)
+
 
 from pyrogram import Client 
 from config import API_ID, API_HASH, BOT_TOKEN
