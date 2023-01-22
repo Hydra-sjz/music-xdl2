@@ -1,12 +1,3 @@
-import logging
-
-import logging.config
-
-# Get logging configurations
-
-logging.config.fileConfig('logging.conf')
-
-logging.getLogger().setLevel(logging.ERROR)
 
 
 from pyrogram import Client 
@@ -27,17 +18,6 @@ class Bot(Client):
             sleep_threshold=5,
         )
 
-    async def start(self):
-       await super().start()
-       me = await self.get_me()
-       self.mention = me.mention
-       self.username = me.username       
-       logging.info(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
-      
-
-    async def stop(self, *args):
-      await super().stop()      
-      logging.info("Bot Stopped")
+    
         
-bot = Bot()
 bot.run()
