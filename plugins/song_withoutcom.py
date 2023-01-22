@@ -113,9 +113,7 @@ def song(_, message):
             AForCopy.copy(LOG_GROUP)
        
         m.delete()
-    except Exception as e:
-        m.edit("#ERROR")
-        print(e)
+    
 
     try:
         os.remove(audio_file)
