@@ -98,7 +98,6 @@ def song(_, message):
             audio_file,
             caption=rep,
             thumb=thumb_name,
-            parse_mode="md",
             performer=performer,
             title=title,
             duration=dur,
