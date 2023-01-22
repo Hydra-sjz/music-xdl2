@@ -108,9 +108,9 @@ def song(_, message):
           ]]
           )
       )
-        if LOG_GROUP:
-            PForCopy.copy(LOG_GROUP)
-            AForCopy.copy(LOG_GROUP)
+      if LOG_GROUP:
+          PForCopy.copy(LOG_GROUP)
+          AForCopy.copy(LOG_GROUP)
        
         
     except Exception as e:
