@@ -20,7 +20,7 @@ from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 
 from database.decorators import humanbytes
-from database.filters import command, other_filters
+#from database.filters import command, other_filters
 
 from config import LOG_GROUP
 
