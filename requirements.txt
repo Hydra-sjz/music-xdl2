@@ -18,3 +18,4 @@ motor
 psutil
 future
 wget
+lyricsgenius
