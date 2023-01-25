@@ -16,6 +16,6 @@ API_HASH = os.environ.get("API_HASH", "ea4cb0f090d7366f7e4ab9dfc116acc7")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "784589736").split()))
 
-LOG_GROUP = environ.get("LOG_GROUP", "-1001630162995")
+LOG_GROUP = environ.get("LOG_GROUP")
 if LOG_GROUP:
     LOG_GROUP = int(LOG_GROUP)
