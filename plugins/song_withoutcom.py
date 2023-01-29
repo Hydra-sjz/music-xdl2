@@ -62,7 +62,7 @@ def song(_, message):
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
 
-        if time_to_seconds(duration) >= 2100:  # duration limit
+        if time_to_seconds(duration) >= 7100:  # duration limit
             m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
             return
 
@@ -111,10 +111,10 @@ def song(_, message):
         if LOG_GROUP:
             PForCopy.copy(LOG_GROUP)
             AForCopy.copy(LOG_GROUP)
-       
+            
+        #m.edit("#ERROR")
     except Exception as e:
         m.delete()
-        m.edit("#ERROR")
         print(e)
 
     try:
