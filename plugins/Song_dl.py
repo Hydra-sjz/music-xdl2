@@ -42,9 +42,6 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-@Client.on_message(filters.private & filters.command("start"))
-async def start_command(_, message):
-    await message.reply_text(f"Hi {message.from_user.mention}\n\nIm am music download bot for @songdownload_group group ‼️\nyou can download songs from there, just type /s or /song then write your song name.\ne.g: `/s alone`\n\nhttps://t.me/songdownload_group")
 
 @Client.on_message(filters.private & filters.command(["song", "song@Musicx_dlbot", "s", "s@Musicx_dlbot"]))
 def song(_, message):
