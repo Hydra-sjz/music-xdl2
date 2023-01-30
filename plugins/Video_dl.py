@@ -31,8 +31,8 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 
-
-@Client.on_message(filters.group & filters.command(["video", "video@Musicx_dlbot", "v"]))
+#filters.group & 
+@Client.on_message(filters.command(["video", "video@Musicx_dlbot", "v"]))
 async def vsong(client, message):
     ydl_opts = {
         "format": "best", 
