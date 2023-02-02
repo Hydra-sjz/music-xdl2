@@ -102,7 +102,7 @@ def song(_, message):
             title=title,
             duration=dur,
         )
-        message.reply_text(f"Done✅",   
+        message.reply_sticker(sticker="CAACAgIAAxkBAAIS0WPb-Iq4TM7Bs67zYGG3JELnk1rsAAIoIAACJaYJS-FqCk576-FVHgQ",   
           reply_markup=InlineKeyboardMarkup([[
           InlineKeyboardButton("Done ✅", url="t.me/Musicx_dlbot")
           ]]
