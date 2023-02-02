@@ -1,44 +1,29 @@
 import os
-import re
-
-import lyricsgenius
 from pyrogram import Client, filters
-from pyrogram.types import Message
+import lyricsgenius
+from pyrogram.types import Message, User
+import requests
 
 
 
-@Client.on_message(filters.command(["lyrics", "lyric"]))
-async def lrsearch(_, message: Message):
-    if len(message.command) < 2:
-        return await message.reply_text("**Usage:**\n\n/lyrics [ Music Name]")
-    m = await message.reply_text("Searching Lyrics")
-    query = message.text.split(None, 1)[1]
-    x = "OXaVabSRKQLqwpiYOn-E4Y7k3wj-TNdL5RfDPXlnXhCErbcqVvdCF-WnMR5TBctI"
+
+#  Lyrics--------------------
+@Client.on_message(filters.command("lyric"))
+async def lrsearch(_, message: Message):  
+    m = await message.reply_text("Sᴇᴀʀᴄʜɪɴɢ ʟʏʀɪᴄs...")
+    query = query = message.text.split(None, 1)[1]
+    x = "LtdSiWU2HM46_UHOTHje-yWnJYWGWpP9udmaSqu3GvGA8Z5Enzq6zh2OF-vwm3dv"
     y = lyricsgenius.Genius(x)
     y.verbose = False
     S = y.search_song(query, get_full_info=False)
     if S is None:
-        return await m.edit("Lyrics not found :p")
+        return await m.edit("Lʏʀɪᴄs ɴᴏᴛ ғᴏᴜɴᴅ...")
     xxx = f"""
-**Lyrics Search Powered By Music X dl**
-
-**Searched Song:-** __{query}__
-**Found Lyrics For:-** __{S.title}__
-**Artist:-** {S.artist}
-
-**__Lyrics:__**
-
+**Lyrics Search Powered By ʜʏᴅʀɪx ᴛᴏᴏʟ ʙᴏᴛ**
+**Searched Song:** __{query}__
+**Found Lyrics For:** __{S.title}__
+**Artist:** {S.artist}
+**Requested by:** {message.from_user.mention}
+**Lyrics:**
 {S.lyrics}"""
-    if len(xxx) > 4096:
-        await m.delete()
-        filename = "lyrics.txt"
-        with open(filename, "w+", encoding="utf8") as out_file:
-            out_file.write(str(xxx.strip()))
-        await message.reply_document(
-            document=filename,
-            caption=f"**OUTPUT:**\n\n`Lyrics`",
-            quote=False,
-        )
-        os.remove(filename)
-    else:
-        await m.edit(xxx)
+    await m.edit(xxx)
