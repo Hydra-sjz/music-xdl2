@@ -1,7 +1,7 @@
 from pyrogram import (
     filters
 )
-from plugins.admin_check import admin_check
+from driver.admin_check import admin_check
 import os
 
 
