@@ -37,15 +37,15 @@ async def telegraph(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f"<b>Tᴇʟᴇɢʀᴀᴘʜ ʟɪɴᴋ:-</b>\n\n <code>https://telegra.ph{response[0]}</code>",
+            f"<b>Telegraph Link:</b>\n\n <code>https://telegra.ph{response[0]}</code>",
             quote=True,
             reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="ᴏᴘᴇɴ ʟɪɴᴋ", url=f"https://telegra.ph{response[0]}"),
-                    InlineKeyboardButton(text="sʜᴀʀᴇ ʟɪɴᴋ", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
+                    InlineKeyboardButton(text="Open link", url=f"https://telegra.ph{response[0]}"),
+                    InlineKeyboardButton(text="Share link", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}")
                 ],
-                [InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="delete")]
+                [InlineKeyboardButton(text="Close", callback_data="delete")]
             ]
         )
     )
