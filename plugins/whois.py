@@ -6,14 +6,14 @@ import time
 from datetime import datetime
 from pyrogram import Client, filters
 from pyrogram.errors import UserNotParticipant
-from infog import COMMAND_HAND_LER
+
 from plugins.extract_user import extract_user
 from plugins.cust_p_filters import f_onw_fliter
 from plugins.last_online_hlpr import last_online
 
 
 @Client.on_message(
-    filters.command(["whois", "infog"], COMMAND_HAND_LER) &
+    filters.command(["whois", "info"]) &
     f_onw_fliter
 )
 async def who_is(client, message):
