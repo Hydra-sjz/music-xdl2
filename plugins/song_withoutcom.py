@@ -63,14 +63,14 @@ def song(_, message):
         duration = results[0]["duration"]
 
         if time_to_seconds(duration) >= 7100:  # duration limit
-            m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
+            m.edit(f"❗**DURATION LIMIT EXCEEDE:**❗\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
             return
 
     except Exception as e:
         m.edit(f"Nothing Found {message.from_user.first_name} :(\n\nPlease check, you using correct format or your spellings are correct and try again.")
         print(str(e))
         return
-    m.edit("🔽 <code>Downloading Song...</code>",
+    m.edit("🔽 <code>Downloading...</code>",
       reply_markup=InlineKeyboardMarkup([[
           InlineKeyboardButton("Downloading...", callback_data="feed")
           ]]
@@ -83,7 +83,7 @@ def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"[{title}]({link}) | {channel}"
+        rep = f"<code>{title}</code> | <b>{channel}</b>"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -104,7 +104,7 @@ def song(_, message):
         )
         message.reply_text(f"Done✅",   
           reply_markup=InlineKeyboardMarkup([[
-          InlineKeyboardButton("Done ✅", callback_data="feed")
+          InlineKeyboardButton("Done ✅", url="t.me/Musicx_dlbot")
           ]]
           )
       )
@@ -112,7 +112,7 @@ def song(_, message):
             PForCopy.copy(LOG_GROUP)
             AForCopy.copy(LOG_GROUP)
             
-        #m.edit("#ERROR")
+        m.edit("#ERROR")
     except Exception as e:
         m.delete()
         print(e)
