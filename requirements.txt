@@ -21,3 +21,4 @@ wget
 lyricsgenius
 pytz
 datetime
+telegraph
