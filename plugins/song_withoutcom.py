@@ -114,7 +114,7 @@ def song(_, message):
             
         #m.edit("#ERROR")
     except Exception as e:
-     5983309868   m.delete()
+        m.delete()
         print(e)
 
     try:
