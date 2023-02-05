@@ -61,8 +61,8 @@ def song(_, message):
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
 
-        if time_to_seconds(duration) >= 2100:  # duration limit
-            m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
+        if time_to_seconds(duration) >= 1000:  # duration limit
+            m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 10 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 10 minutes")
             return
 
     except Exception as e:
