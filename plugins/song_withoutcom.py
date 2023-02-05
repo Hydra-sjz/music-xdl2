@@ -62,8 +62,8 @@ def song(_, message):
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
 
-        if time_to_seconds(duration) >= 7100:  # duration limit
-            m.edit(f"❗**DURATION LIMIT EXCEEDE:**❗\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
+        if time_to_seconds(duration) >= 180:  # duration limit
+            m.edit(f"❗**DURATION LIMIT EXCEEDE:**❗\n\n**Allowed Duration:** 10 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 10 minutes")
             return
 
     except Exception as e:
@@ -77,7 +77,7 @@ def song(_, message):
           )
       )
 
-    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n<b>👀Views:</b> <code>{views}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n🔗<b>Song link:</b> [Click here]({link})\n\n💌 <b>By:</b> [𝗠ᴜsɪᴄ✘Dʟ](t.me/Musicx_dlbot)")
+    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n<b>👀Views:</b> <code>{views}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n🔗<b>link:</b> [Click here]({link})\n\n💌 <b>By:</b> [𝗠ᴜsɪᴄ✘Dʟ](t.me/Musicx_dlbot)")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
