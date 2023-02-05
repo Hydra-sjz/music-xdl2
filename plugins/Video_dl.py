@@ -54,7 +54,7 @@ async def vsong(client, message):
         results[0]["duration"]
         results[0]["url_suffix"]
         results[0]["views"]
-        if time_to_seconds(duration) >= 2100:  # duration limit
+        if time_to_seconds(duration) >= 1000:  # duration limit
             msg = await message.reply_text(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 60 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 60 minutes")
             return
         message.from_user.mention
