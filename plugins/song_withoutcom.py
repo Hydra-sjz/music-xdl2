@@ -112,9 +112,9 @@ def song(_, message):
             PForCopy.copy(LOG_GROUP)
             AForCopy.copy(LOG_GROUP)
             
-        #m.edit("#ERROR")
-    except Exception as e:
         m.delete()
+    except Exception as e:
+        m.edit("#ERROR")
         print(e)
 
     try:
