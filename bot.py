@@ -1,6 +1,8 @@
 from pyrogram import Client 
-from config import API_ID, API_HASH, BOT_TOKEN
+from config import API_ID, API_HASH, BOT_TOKEN, PORT
 
+from aiohttp import web
+from plugins import web_server
 
 
 class Bot(Client):
@@ -16,6 +18,11 @@ class Bot(Client):
             sleep_threshold=5,
         )
 
+        #web-response
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
     
         
 
