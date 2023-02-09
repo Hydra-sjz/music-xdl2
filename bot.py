@@ -1,5 +1,5 @@
 from pyrogram import Client
-from config import *
+from config import BOT_TOKEN, API_HASH, API_ID
 from route import web_server
 from aiohttp import web
 
