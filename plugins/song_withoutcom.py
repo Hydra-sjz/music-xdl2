@@ -62,8 +62,8 @@ def song(_, message):
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
 
-        if time_to_seconds(duration) >= 1000:  # duration limit
-            m.edit(f"❗**DURATION LIMIT EXCEEDE:**❗\n\n**Allowed Duration:** 10 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 10 minutes")
+        if time_to_seconds(duration) >= 900:  # duration limit
+            m.reply_photo(photo="https://telegra.ph/file/2d165d91b82dcab56d058.jpg", caption=f"❗**DURATION LIMIT EXCEEDE:**❗\n\n🛂 **Allowed Duration:** 10 minute(s)\n🛌 **Received Duration:** {duration} minute | hour(s)\nReceived video URL: [click here]({link})\n\nSend songs less than 10 minutes")
             return
 
     except Exception as e:
