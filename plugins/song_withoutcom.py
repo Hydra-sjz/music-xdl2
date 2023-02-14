@@ -27,7 +27,7 @@ from config import LOG_GROUP
  
 
 ydl_opts = {
-    'format': 'best',
+    'format': 'bestaudio',
     'keepvideo': True,
     'prefer_ffmpeg': False,
     'geo_bypass': True, 
